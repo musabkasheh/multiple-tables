@@ -1,0 +1,27 @@
+﻿@model IEnumerable<tabel.Models.employee>
+@using tabel.Models
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div>
+
+    <h2>Index</h2>
+    <ul>
+        @foreach (var em in Model)
+        {
+
+            <li>
+
+                @Html.ActionLink(em.name, "details", new { id = em.id })
+
+
+            </li>
+        }
+    </ul>
+</div>
+@Html.ActionLink("back to list", "Index","department")
+
+
+

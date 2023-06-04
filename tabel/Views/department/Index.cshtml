@@ -1,0 +1,18 @@
+﻿@using tabel.Models
+@model IEnumerable<department>
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<ul>
+    @foreach (department department in @Model)
+    {
+        <li>
+            @Html.ActionLink(department.name, "Index", "Employee",
+ new { departmentid = department.id}, null)
+        </li>
+    }
+</ul>
